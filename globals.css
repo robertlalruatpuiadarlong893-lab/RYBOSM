@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0F1B17;
+  color: #E8E2CE;
+}
+
+/* subtle scanline / slide texture */
+.specimen-bg {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(94, 234, 212, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(251, 113, 133, 0.05), transparent 45%);
+}
+
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
